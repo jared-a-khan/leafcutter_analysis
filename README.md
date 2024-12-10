@@ -82,3 +82,48 @@ Caroline is responsible for data preprocessing. Ale will conduct analyses descri
 This work is funded by the following grants:
 * Grant 1
 * Grant 2
+
+## Software Installation
+(Adapted from [LeafCutter installation instructions](https://davidaknowles.github.io/leafcutter/articles/Installation.html)) \
+\
+The prerequisites for LeafCutter are: \
+	- samtools should be available on your PATH \
+	- regtools should be available on your PATH \
+	- Python 2.7 (earlier versions may be OK) \
+	- R (version 3.6.0, earlier versions may be OK) \
+ \
+To download the code (you’ll need this for the leafcutter scripts):
+  ```bash
+git clone https://github.com/davidaknowles/leafcutter
+  ```
+To check if software is available on your PATH:
+  ```bash
+echo $PATH
+   ```
+To add software to your PATH:
+```bash
+export $PATH=$PATH:/path/to/software
+
+# For example, adding regtools to PATH:
+export $PATH=$PATH:/home/mac/jkhan1/bin/regtools/build
+   ```
+### Installing rstan
+Leafcutter relies on stan and its R interface rstan. Installing this can be tricky. If you’re lucky, this will work:
+```bash
+install.packages("rstan")
+```
+For now we also need a version of rstantools (2.0.0) that is not yet on CRAN, so do:
+
+```bash
+if (!require("devtools")) install.packages("devtools", repos='http://cran.us.r-project.org')
+devtools::install_github("stan-dev/rstantools")
+```
+### Using devtools (recommended)
+To compile the R package to perform differential splicing analysis and make junction plots we recommend you install using devtools (this should install the required R package dependencies for you).
+
+```bash
+devtools::install_github("davidaknowles/leafcutter/leafcutter")
+```
+
+We’ve had a report (thanks to Peter Carbonetto) that it may be necessary to restart R before trying to load leafcutter because dplyr may get updated during the installation process.
+
