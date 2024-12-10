@@ -1,10 +1,10 @@
 ---
-title: "My_Project.md"
-author: "First Last"
+title: "leafcutter_analysis.md"
+author: "Jared Khan"
 date: "2023-12-01"
 output: github_document
 ---
-# Title of My Project
+# LeafCutter Analysis
    
 ## Background/Overview
 
@@ -127,3 +127,6 @@ devtools::install_github("davidaknowles/leafcutter/leafcutter")
 
 We’ve had a report (thanks to Peter Carbonetto) that it may be necessary to restart R before trying to load leafcutter because dplyr may get updated during the installation process.
 
+- set up miniforge
+- create conda env w/ R 4.0
+- re-follorw leafcutter instructions
